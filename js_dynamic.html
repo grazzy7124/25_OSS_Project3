@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input{
+            border-radius: 3px;
+            border: 1px solid #999999;
+        }
+        button {
+            color: white;
+            width: 50px;
+            border-style: none;
+        }
+
+        #add {
+            background-color: blue;
+        }
+        #remove {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Web page</h1>
+    <input id="txt" type="text">
+    <button id="add">추가</button>
+    <button id="remove">삭제</button>
+</body>
+</html>
+
+<script>
+    const add = document.getElementById('add');
+    const remove = document.getElementById('remove');
+
+    const list = document.createElement('ul');
+    document.body.appendChild(list);
+    add.addEventListener('click', ()=> {
+        const txt = document.getElementById('txt');
+        
+
+        const txtList = txt.value.split(',');
+
+        for (t in txtList) {
+            if (txtList[t] == '') continue;
+            const listItem = document.createElement('li');
+            listItem.textContent = txtList[t];
+            list.appendChild(listItem);
+        }
+
+        txt.value="";
+        
+    });
+
+    remove.addEventListener('click', ()=> {
+        list.innerHTML="";
+    });
+
+</script>
