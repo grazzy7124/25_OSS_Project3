@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html><!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -19,24 +9,28 @@
 </head>
 <body>
   <div class="container py-4">
+    <h3 class="mb-3">글 작성 페이지</h3>
 
     <form id="post-form" class="vstack gap-3">
+      <!-- 제목/닉네임/날짜 -->
       <div class="row g-2">
         <div class="col-12 col-lg">
-          <input id="title" class="form-control" value="오늘부터 바닐라 자바스크립트 공부 시작!" />
+          <input id="title" class="form-control" placeholder="제목" />
         </div>
         <div class="col-6 col-lg-3">
-          <input id="nickName" class="form-control" value="dev_초보" />
+          <input id="nickName" class="form-control" placeholder="닉네임" />
         </div>
         <div class="col-6 col-lg-3">
-          <input id="date" type="date" class="form-control" value="2025-09-20"/>
+          <input id="date" type="date" class="form-control" />
         </div>
       </div>
 
-      <textarea id="txt" class="form-control" rows="12" placeholder="내용을 입력하세요">요즘 프레임워크만 쓰다가 기초를 다시 다져야겠다는 생각이 들었다. 그래서 오늘부터 바닐라 자바스크립트로 작은 프로젝트를 해보기로 했다. 첫 번째 목표는 간단한 To-Do 리스트 앱을 만드는 것! 끝까지 꾸준히 하는 게 제일 중요하니까 매일 30분씩 꼭 해봐야겠다.</textarea>
+      <!-- 내용 -->
+      <textarea id="txt" class="form-control" rows="12" placeholder="내용을 입력하세요"></textarea>
 
+      <!-- 액션 버튼 -->
       <div class="d-flex gap-2">
-        <button type="submit" class="btn btn-sm btn-primary ms-auto">수정</button>
+        <button type="submit" class="btn btn-sm btn-primary ms-auto">추가</button>
       </div>
     </form>
   </div>
@@ -73,7 +67,7 @@
         return;
       }
 
-      alert("게시물을 수정할까요?");
+      alert("게시물이 추가됩니다");
       form.submit(); 
     });
   </script>
